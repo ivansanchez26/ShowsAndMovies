@@ -1,0 +1,14 @@
+<div class="flex-container">
+  <div class="flex-item" *ngFor="let tvShow of tvShows">
+    <mat-card (click)="tvShowClick(tvShow)">
+      <mat-card-title-group>
+        <mat-card-title>{{tvShow.name}}</mat-card-title>
+        <mat-card-subtitle>Score: {{tvShow.vote_average}}</mat-card-subtitle>
+        <img mat-card-sm-image src="https://image.tmdb.org/t/p/original/{{tvShow.poster_path}}">
+      </mat-card-title-group>
+      <mat-card-content>
+        {{(tvShow.overview.length>100)? (tvShow.overview | slice:0:100)+'...':(tvShow.overview)}}
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

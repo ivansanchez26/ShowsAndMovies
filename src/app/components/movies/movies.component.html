@@ -1,0 +1,14 @@
+<div class="flex-container">
+  <div class="flex-item" *ngFor="let movie of movies">
+    <mat-card (click)="movieClick(movie)">
+      <mat-card-title-group>
+        <mat-card-title>{{movie.title}}</mat-card-title>
+        <mat-card-subtitle>Score: {{movie.vote_average}}</mat-card-subtitle>
+        <img mat-card-sm-image src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}">
+      </mat-card-title-group>
+      <mat-card-content>
+        {{(movie.overview.length>100)? (movie.overview | slice:0:100)+'...':(movie.overview)}}
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

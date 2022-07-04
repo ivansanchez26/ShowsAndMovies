@@ -1,0 +1,33 @@
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: normal;
+}
+
+.flex-item {
+  width: 30%;
+  display: block;
+  margin: 10px;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+
+  transition: transform .5s; 
+}
+
+.flex-item:hover {
+  transform: scale(1.075);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  /* For mobile phones: */
+  .flex-item{
+    width: 100%;
+  }
+}

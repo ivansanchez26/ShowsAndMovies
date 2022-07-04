@@ -1,0 +1,25 @@
+<div class="content" *ngIf="selectedTvShow">
+  <div class="tvShowDetails">
+    <h1>{{selectedTvShow.name}}</h1>
+    <div class="parent">
+      <div>
+        <img src="https://image.tmdb.org/t/p/original/{{selectedTvShow.poster_path}}" alt="Tv show image">
+      </div>
+      <div>
+        <h3>Overview</h3>
+        <p>
+          {{selectedTvShow.overview}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="relatedTvShows">
+    <h2>Related Tv Shows</h2>
+    <mat-nav-list *ngIf="relatedTvShows">
+      <mat-list-item *ngFor="let tvShow of relatedTvShows" (click)="clickRelatedTvShow(tvShow)">
+        {{tvShow.name}}
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-nav-list>
+  </div>
+</div>

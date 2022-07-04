@@ -1,0 +1,25 @@
+<div class="content" *ngIf="selectedMovie">
+  <div class="movieDetails">
+    <h1>{{selectedMovie.title}}</h1>
+    <div class="parent">
+      <div>
+        <img src="https://image.tmdb.org/t/p/original/{{selectedMovie.poster_path}}" alt="Movie image">
+      </div>
+      <div>
+        <h3>Overview</h3>
+        <p>
+          {{selectedMovie.overview}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="relatedMovies">
+    <h2>Related Movies</h2>
+    <mat-nav-list *ngIf="relatedMovies">
+      <mat-list-item *ngFor="let movie of relatedMovies" (click)="clickRelatedMovie(movie)">
+        {{movie.title}}
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-nav-list>
+  </div>
+</div>

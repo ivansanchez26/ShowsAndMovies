@@ -1,0 +1,7 @@
+<mat-button-toggle-group class="moviesShowsButtonGroup" (change)="toggleMoviesShows($event.value)">
+  <mat-button-toggle value="movies" checked="true" >Movies</mat-button-toggle>
+  <mat-button-toggle value="tvShows" >Shows</mat-button-toggle>
+</mat-button-toggle-group>
+
+<app-movies [movies]="movies$ | async" *ngIf="listToShow == 'movies'"></app-movies>
+<app-tv-shows [tvShows]="tvShows$ | async" *ngIf="listToShow == 'tvShows'"></app-tv-shows>
